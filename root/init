@@ -1,0 +1,12 @@
+#!/bin/busybox sh
+
+# Mount required filesystems
+busybox mount -t devtmpfs  devtmpfs  /dev
+busybox mount -t proc      proc      /proc
+busybox mount -t sysfs     sysfs     /sys
+busybox mount -t tmpfs     tmpfs     /tmp
+
+# Install busybox into bin for 'regular' terminal usage
+busybox --install /bin
+printf "\nWelcome to Very Basic Linux! This is a tiny single-file live distro!\nDefault login is account 'root' with no password.\n\n"
+login
